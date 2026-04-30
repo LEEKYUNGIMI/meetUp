@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/meetup_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&createDatabaseIfNotExist=true
-    username: root
-    password: lkm917926!
+    url: ${DB_URL:jdbc:mysql://localhost:3306/meetup_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&createDatabaseIfNotExist=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:lkm917926!}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -13,4 +13,4 @@ spring:
         format_sql: true
 
 server:
-  port: 8080
+  port: ${PORT:8080}
